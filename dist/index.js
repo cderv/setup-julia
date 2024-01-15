@@ -268,7 +268,7 @@ function installJulia(dest, versionInfo, version, arch) {
                 }
                 else {
                     // This is the more common path. Using .tar.gz is much faster
-                    yield exec.exec('powershell', ['-Command', `$env:WINDIR/System32/tar xf ${juliaDownloadPath} --strip-components=1 -C ${dest}`]);
+                    yield exec.exec('powershell', ['-Command', `& "$env:WINDIR/System32/tar" xf ${juliaDownloadPath} --strip-components=1 -C ${dest}`]);
                 }
                 return dest;
             case 'darwin':
